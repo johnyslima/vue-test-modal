@@ -3,7 +3,7 @@
     <Navbar />
     <v-container>
     <HeaderLogo />
-    <div class="d-flex">
+    <div class="d-flex justify-space-between menu-bar">
       <Menu />
       <SearchBar />
     </div>
@@ -28,5 +28,7 @@ export default {
 }
 </script>
 <style lang="scss">
-  
+  .menu-bar {
+    margin-top: 25px;
+  }
 </style>

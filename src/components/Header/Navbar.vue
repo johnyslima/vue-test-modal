@@ -6,6 +6,7 @@
       dark
       class="header-bar"
     >
+    <v-container class="d-flex">
       <div class="d-flex align-center">
         <!-- <v-img
           alt="Vuetify Logo"
@@ -60,6 +61,7 @@
         <!-- <v-icon>mdi-open-in-new</v-icon> -->
       </v-btn>
       </div>
+      </v-container>
     </v-app-bar>
 </template>
 <script>
