@@ -7,7 +7,6 @@
           <v-tabs>
             <v-tab>Женщинам</v-tab>
             <v-tab>Мужчинам</v-tab>
-            <v-tab>Детям</v-tab>
           </v-tabs>
         </nav>
 
@@ -39,14 +38,51 @@
               >
                 <!---->
               </v-img>
-            <span >Корзина</span>
+            <span v-if="this.counstItemsInBasket === 0">Корзина</span>
+            <span v-else>{{this.counstItemsInBasket}} товара</span>
           </a>
         </div>
       </div>
   </v-main>
 </template>
 <script>
-export default {};
+import { mapGetters, mapActions } from "vuex";
+export default {
+  data() {
+    return {
+      countItems: null
+    }
+  },
+  mounted() {
+    // this.count()
+    this.loadItemsFromStorage()
+  },
+
+  computed: mapGetters(['itemsInBasket', 'counstItemsInBasket']),
+
+  methods: {
+    ...mapActions(["addItems", "loadItemsFromStorage"]),
+    // count() {
+    //   let itemsArr = []
+    //   if ((localStorage.getItem('basket') !== null)) {
+    //     itemsArr = JSON.parse(localStorage.basket)
+    //     this.countItems = itemsArr.length
+    //   }
+    //   // return itemsArr.length
+    // }
+  },
+
+  // computed: {
+  //   countItems() {
+  //     let itemsArr = []
+  //     if ((localStorage.getItem('basket') !== null)) {
+  //       itemsArr = JSON.parse(localStorage.basket)
+  //       // this.countItems = itemsArr.length
+  //     }
+  //     return itemsArr.length
+  //   }
+  // }
+};
 </script>
 <style lang="scss">
 .d-header-genders {

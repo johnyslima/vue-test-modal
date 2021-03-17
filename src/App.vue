@@ -24,9 +24,6 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  font-size: 13px;
-}
 .header {
   height: 40px;
 }
