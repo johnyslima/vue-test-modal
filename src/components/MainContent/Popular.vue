@@ -1,10 +1,6 @@
 <template lang="">
   <v-container>
     <div>
-      <!-- <div v-for="post in allPosts" :key="post.id">
-        <h2>{{post.title}}</h2>
-        <p>{{post.body}}</p>
-      </div> -->
       <v-sheet class="mx-auto" elevation="0" max-width="100%">
         <v-slide-group
           v-model="dialog"
@@ -28,31 +24,6 @@
         </v-slide-group>
       </v-sheet>
     </div>
-
-    <!-- <v-menu>
-    <template v-slot:activator="{ on, attrs }">
-      <v-btn
-        v-bind="attrs"
-        v-on="on"
-      >
-        Click me
-      </v-btn>
-    </template>
-
-    <v-list>
-      <v-list-item @click="method">
-        <v-list-item-title>Option 1</v-list-item-title>
-      </v-list-item>
-
-      <v-list-item disabled>
-        <v-list-item-title>Option 2</v-list-item-title>
-      </v-list-item>
-
-      <v-list-item @click="method">
-        <v-list-item-title>Option 3</v-list-item-title>
-      </v-list-item>
-    </v-list>
-  </v-menu> -->
   <Modal ref="modal" :dialog="dialog" />
   </v-container>
 </template>
@@ -67,7 +38,6 @@ export default {
 
   data() {
     return {
-      posts: [],
       dialog: false,
     };
   },
@@ -77,9 +47,9 @@ export default {
   //   },
   // },
 
-  computed: mapGetters(["allPosts", "postsCount", "allClothes"]),
+  computed: mapGetters(["allClothes"]),
   methods: {
-    ...mapActions(["fetchPosts", "fetchClothes"]),
+    ...mapActions(["fetchClothes"]),
     qwe(val) {
       console.log(val);
       this.dialog = true;
@@ -93,7 +63,6 @@ export default {
   },
 
   async mounted() {
-    this.fetchPosts();
     this.fetchClothes();
   },
 };

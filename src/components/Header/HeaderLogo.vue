@@ -23,9 +23,9 @@
         </v-img>
 
         <div class="d-flex buy-basket">
-          <a role="button" class="sign-in-btn">
+          <!-- <a role="button" class="sign-in-btn">
             Войти
-          </a>
+          </a> -->
           <a href="/checkout/cart/" role="link" class="d-flex buy-basket-link">
               <v-img
                 alt="Vuetify Logo"

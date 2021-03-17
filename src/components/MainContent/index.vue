@@ -2,7 +2,6 @@
 <v-container>
     <div>
         <Popular />
-        
     </div>
     </v-container>
 </template>

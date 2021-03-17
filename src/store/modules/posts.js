@@ -1,49 +1,31 @@
 import { clothes } from '../../mock'
 export default {
   state: {
-    posts: [],
     clothes: [],
   },
   actions: {
-    async fetchPosts(ctx, limit = 3) {
-      let posts
-      await fetch("https://jsonplaceholder.typicode.com/posts?_limit=" + limit)
-      .then((response) => response.json())
-      .then((json) => posts = json);
-
-      ctx.commit('updatePosts', posts)
-    },
 
     fetchClothes(ctx) {
       ctx.commit('updateClothes', clothes)
     },
 
-    updateCountSize(ctx, id, size, count) {
-      ctx.commit("updateCount", id,  size, count);
+    updateCountSize(ctx, payload) {
+      const {id, size} = payload
+      console.log(payload)
+      const arrClothes = [...ctx.state.clothes]
+      const obj = arrClothes.find((item) => item.id === id)
+      const objSize = obj.sizes.find((s) => s.size === size)
+      objSize.count = objSize.count - 1
+
+      ctx.commit("updateClothes", arrClothes);
     }
   },
   mutations: {
-    updatePosts(state, posts) {
-      state.posts = posts
-    },
-
     updateClothes(state, clothes) {
       state.clothes = clothes
     },
-
-    // updateCountSize(state, id, size, count) {
-    //   state.clothes
-    // }
   },
   getters: {
-    allPosts(state) {
-      return state.posts
-    },
-
-    postsCount(state) {
-      return state.posts.length
-    },
-
     allClothes(state) {
       return state.clothes
     }

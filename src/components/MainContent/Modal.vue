@@ -14,7 +14,7 @@
               <span class="product-title__model-name">{{ item.title }}</span>
             </h1>
 
-            <div>
+            <div class="mb-2">
               <span
                 aria-label="Итоговая цена"
                 class="product-title__model-price"
@@ -23,8 +23,25 @@
               >
             </div>
 
-            <div class="btns mb-8">
-              <v-btn class="product__cart-add-button" elevation="7" large @click="addToBasket(item)">
+            <v-divider />
+
+            <div class="btns my-8">
+              <v-select
+                v-model="select"
+                :items="item.sizes"
+                :hint="`Осталось на складе: ${select.count} шт.`"
+                item-text="size"
+                item-value="size"
+                label="Выберите размер"
+                return-object
+                outlined
+              ></v-select>
+              <v-btn
+                class="product__cart-add-button"
+                elevation="7"
+                large
+                @click="addToBasket(item)"
+              >
                 Добавить в корзину
               </v-btn>
             </div>
@@ -32,44 +49,24 @@
             <div class="ii-product__description">
               <div class="heading_s">О товаре</div>
               <div class="ii-product__description-text">
-                <div class="ii-product__attributes" v-for="desc in item.description" :key="desc.id">
-                <div class="ii-product__attribute">
-                  <span class="ii-product__attribute-label">
-                    {{desc.title}}
-                  </span>
-                  <span class="ii-product__attribute-value">
-                    {{desc.value}}
-                  </span>
-                </div>
+                <div
+                  class="ii-product__attributes"
+                  v-for="desc in item.description"
+                  :key="desc.id"
+                >
+                  <div class="ii-product__attribute">
+                    <span class="ii-product__attribute-label">
+                      {{ desc.title }}
+                    </span>
+                    <span class="ii-product__attribute-value">
+                      {{ desc.value }}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- <v-card-title class="headline grey lighten-2">
-          {{item.title}}
-        </v-card-title> -->
-
-        <!-- <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text> -->
-
-        <!-- <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <button @click="closeModal">wqeqfv</button>
-          <v-btn color="primary" text @click="closeModal">
-            I accept
-          </v-btn>
-        </v-card-actions> -->
       </v-card>
     </v-dialog>
   </div>
@@ -82,20 +79,32 @@ export default {
     return {
       show: false,
       item: null,
+      select: {
+        count: 0
+      },
     };
   },
 
   mounted() {
+
   },
 
   methods: {
-    ...mapActions(['addItems']),
+    ...mapActions(["addItems", "updateCountSize"]),
     closeModal: function() {
       this.show = false;
     },
     addToBasket(item) {
-      this.addItems(item)
-    }
+      this.updateCountSize({ 
+        id: item.id, 
+        size: this.select.size
+      });
+      this.addItems({ 
+        item,
+        size: this.select.size
+      });
+      this.closeModal()
+    },
   },
 };
 </script>

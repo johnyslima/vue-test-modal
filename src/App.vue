@@ -1,22 +1,13 @@
 <template>
-  <v-app>
-    <Header />
-    <MainContent />
-  </v-app>
+  <div id="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import Header from './components/Header/index';
-import MainContent from './components/MainContent/index';
 
 export default {
   name: 'App',
-
-  components: {
-    Header,
-    MainContent
-  },
-
   data: () => ({
     //
   }),
@@ -24,7 +15,4 @@ export default {
 </script>
 
 <style lang="scss">
-.header {
-  height: 40px;
-}
 </style>
