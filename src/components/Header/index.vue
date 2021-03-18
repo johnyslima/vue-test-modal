@@ -3,10 +3,10 @@
     <Navbar />
     <v-container>
     <HeaderLogo />
-    <div class="d-flex justify-space-between menu-bar">
+    <!-- <div class="d-flex justify-space-between menu-bar">
       <Menu />
       <SearchBar />
-    </div>
+    </div> -->
     </v-container>
   </div>
 </template>
@@ -15,15 +15,15 @@
 <script>
 import HeaderLogo from './HeaderLogo';
 import Navbar from './Navbar';
-import Menu from './Menu';
-import SearchBar from './SearchBar';
+// import Menu from './Menu';
+// import SearchBar from './SearchBar';
 
 export default {
   components: {
     HeaderLogo,
     Navbar,
-    Menu,
-    SearchBar
+    // Menu,
+    // SearchBar
   }
 }
 </script>

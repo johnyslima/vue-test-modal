@@ -41,19 +41,11 @@ export default {
       dialog: false,
     };
   },
-  // computed: {
-  //   allPosts() {
-  //     return this.$store.getters.allPosts;
-  //   },
-  // },
+
 
   computed: mapGetters(["allClothes"]),
   methods: {
     ...mapActions(["fetchClothes"]),
-    qwe(val) {
-      console.log(val);
-      this.dialog = true;
-    },
 
     showModal(val) {
       console.log(val)

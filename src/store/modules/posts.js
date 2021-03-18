@@ -28,6 +28,6 @@ export default {
   getters: {
     allClothes(state) {
       return state.clothes
-    }
+    },
   },
 }

@@ -25,15 +25,28 @@ export default {
       }
       
       localStorage.basket = JSON.stringify(arr);
-      ctx.commit("updateBasket", item);
+      ctx.commit("toBasket", item);
     },
 
     loadItemsFromStorage(ctx) {
       ctx.commit("loadItemsFromStorage", JSON.parse(localStorage.basket));
     },
+
+    changeCount(ctx, payload) {
+      const {id, size, type} = payload
+      let arr = [];
+      if (localStorage.getItem("basket") !== null) {
+        arr = JSON.parse(localStorage.basket);
+      }
+      const obj = arr.find((_item) => _item.id === id && _item.size === size)
+      obj.count = type === 'plus' ? obj.count + 1 : obj.count - 1
+
+      localStorage.basket = JSON.stringify(arr);
+      ctx.commit("loadItemsFromStorage", JSON.parse(localStorage.basket));
+    }
   },
   mutations: {
-    updateBasket(state, item) {
+    toBasket(state, item) {
       state.items.push(item);
     },
 
@@ -49,5 +62,14 @@ export default {
     counstItemsInBasket(state) {
       return state.items.length;
     },
+
+    totalPrice(state) {
+      let total = 0
+      state.items.forEach((item) => {
+        total = total + (item.count * item.price)
+      })
+      return total
+    }
+
   },
 };
