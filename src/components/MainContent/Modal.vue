@@ -1,11 +1,12 @@
 <template>
   <div class="text-center" v-if="show">
-    <v-dialog v-model="show" width="754" height="660">
+    <v-dialog v-model="show" width="754" height="660" persistent class="modal">
       <v-card>
         <div class="d-flex">
           <div>
             <v-img height="590" width="400" :src="item.img"></v-img>
           </div>
+
           <div class="ma-5 mt-8 product-title">
             <h1 class="product-title-wrapper">
               <a :href="item.src" class="product-title__brand-name">{{
@@ -26,24 +27,29 @@
             <v-divider />
 
             <div class="btns my-8">
-              <v-select
-                v-model="select"
-                :items="item.sizes"
-                :hint="`Осталось на складе: ${select.count} шт.`"
-                item-text="size"
-                item-value="size"
-                label="Выберите размер"
-                return-object
-                outlined
-              ></v-select>
-              <v-btn
-                class="product__cart-add-button"
-                elevation="7"
-                large
-                @click="addToBasket(item)"
-              >
-                Добавить в корзину
-              </v-btn>
+              <v-form ref="form" v-model="valid" lazy-validation>
+                <v-select
+                  v-model="select"
+                  :items="item.sizes"
+                  :hint="`Осталось на складе: ${select.count} шт.`"
+                  item-text="size"
+                  item-value="size"
+                  label="Выберите размер"
+                  return-object
+                  outlined
+                  :rules="[(v) => !!v || 'Item is required']"
+                  required
+                ></v-select>
+                <v-btn
+                  class="product__cart-add-button"
+                  elevation="7"
+                  large
+                  :disabled="!valid"
+                  @click="addToBasket(item)"
+                >
+                  Добавить в корзину
+                </v-btn>
+              </v-form>
             </div>
 
             <div class="ii-product__description">
@@ -66,6 +72,9 @@
               </div>
             </div>
           </div>
+          <v-btn icon dark class="icon_close" @click="closeModal">
+            <v-icon dark color="black">mdi-close</v-icon>
+          </v-btn>
         </div>
       </v-card>
     </v-dialog>
@@ -80,35 +89,45 @@ export default {
       show: false,
       item: null,
       select: {
-        count: 0
+        count: 0,
       },
     };
   },
 
   mounted() {
-
+    console.log("here");
+    this.select = { count: 0 };
   },
 
   methods: {
     ...mapActions(["addItems", "updateCountSize"]),
     closeModal: function() {
       this.show = false;
+      this.select = { count: 0 };
+      this.item = null;
     },
     addToBasket(item) {
-      this.updateCountSize({ 
-        id: item.id, 
-        size: this.select.size
-      });
-      this.addItems({ 
-        item,
-        size: this.select.size
-      });
-      this.closeModal()
+      this.$refs.form.validate();
+      if (this.select.size) {
+        this.updateCountSize({
+          id: item.id,
+          size: this.select.size,
+        });
+        this.addItems({
+          item,
+          size: this.select.size,
+        });
+        this.closeModal();
+      }
     },
   },
 };
 </script>
 <style lang="scss">
+.modal {
+  overflow-y: hidden !important;
+}
+
 .product-title {
   width: 100%;
   .product-title-wrapper {

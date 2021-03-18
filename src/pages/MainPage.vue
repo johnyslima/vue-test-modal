@@ -1,19 +1,20 @@
 <template>
   <v-app>
-    <Header />
-    <MainContent />
+    <Layout>
+        <MainContent />
+    </Layout>
   </v-app>
 </template>
 
 <script>
-import Header from '../components/Header/index';
+import Layout from '../components/Layout'
 import MainContent from '../components/MainContent/index';
 
 export default {
   name: 'MainPage',
 
   components: {
-    Header,
+    Layout,
     MainContent
   },
 

@@ -1,13 +1,31 @@
-<template lang="">
-  <div>
-    <h1>HELLo</h1>
-  </div>
+<template>
+  <v-app>
+    <Layout>
+        <Order />
+    </Layout>
+  </v-app>
 </template>
+
 <script>
+import Layout from '../components/Layout'
+import Order from '../components/Order';
+
 export default {
-  
-}
+  name: 'OrderPage',
+
+  components: {
+    Layout,
+    Order
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>
-<style lang="">
-  
+
+<style lang="scss">
+.header {
+  height: 40px;
+}
 </style>
