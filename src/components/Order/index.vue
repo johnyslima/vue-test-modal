@@ -35,6 +35,7 @@
     </v-snackbar>
   </v-container>
 </template>
+
 <script>
 import Form from './Form'
 import Info from './Info'
@@ -75,4 +76,5 @@ export default {
   }
 };
 </script>
+
 <style lang=""></style>

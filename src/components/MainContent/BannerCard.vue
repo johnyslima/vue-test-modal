@@ -7,11 +7,13 @@
       </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'BannerCard',
 }
 </script>
+
 <style lang="scss">
   .banner_info_card {
   height: 320px;
@@ -27,6 +29,10 @@ export default {
     .banner_title {
       font-size: 24px;
       font-weight: bold;
+    }
+
+    .banner_description {
+      color: #888;
     }
   }
 }

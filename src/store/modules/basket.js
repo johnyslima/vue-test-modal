@@ -4,6 +4,7 @@ export default {
   state: {
     items: [],
   },
+
   actions: {
     addItems(ctx, payload) {
       const {size, item} = payload
@@ -59,6 +60,7 @@ export default {
       ctx.commit("loadItemsFromStorage", JSON.parse(localStorage.basket));
     }
   },
+
   mutations: {
     toBasket(state, item) {
       state.items.push(item);
@@ -68,6 +70,7 @@ export default {
       state.items = items
     }
   },
+
   getters: {
     itemsInBasket(state) {
       return state.items;
@@ -89,9 +92,7 @@ export default {
       if (localStorage.getItem("order") !== null) {
         return JSON.parse(localStorage.order).length + 1
       }
-
       return 1
     }
-
   },
 };

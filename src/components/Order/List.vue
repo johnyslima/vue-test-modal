@@ -27,6 +27,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import ListItem from "./ListItem";
 import { mapGetters } from "vuex";
@@ -50,6 +51,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 .column-header {
   font-size: 13px;

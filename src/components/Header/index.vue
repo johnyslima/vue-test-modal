@@ -2,7 +2,7 @@
   <div>
     <Navbar />
     <v-container>
-    <HeaderLogo />
+      <HeaderLogo />
     </v-container>
   </div>
 </template>

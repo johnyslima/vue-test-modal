@@ -4,8 +4,8 @@ export default {
   state: {
     clothes: [],
   },
-  actions: {
 
+  actions: {
     fetchClothes(ctx) {
       let arrOrders = fromStorage("order")
       let boughtItems = {}
@@ -46,11 +46,13 @@ export default {
       ctx.commit("updateClothes", arrClothes);
     }
   },
+
   mutations: {
     updateClothes(state, clothes) {
       state.clothes = clothes
     },
   },
+  
   getters: {
     allClothes(state) {
       return state.clothes

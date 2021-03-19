@@ -50,6 +50,7 @@
     </form>
   </div>
 </template>
+
 <script>
 import { validationMixin } from "vuelidate";
 import { required, maxLength, email } from "vuelidate/lib/validators";
@@ -132,6 +133,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scope>
 .order-button {
   width: 224px;

@@ -11,7 +11,7 @@
 
       <a class="header__logo" href="/">
         <v-img
-          alt="Vuetify Logo"
+          alt="Logo"
           class="shrink mr-2"
           contain
           src="https://a.lmcdn.ru/django/d/ru/21.03.11/i/global/header__logo.svg"
@@ -25,7 +25,7 @@
       <div class="d-flex buy-basket">
         <a href="/checkout/cart/" role="link" class="d-flex buy-basket-link">
           <v-img
-            alt="Vuetify Logo"
+            alt="basket"
             class="shrink mr-2"
             contain
             src="https://a.lmcdn.ru/static/21.03.11/img/307d4ad2de375b510f76764183b286e2.svg"
@@ -33,7 +33,6 @@
             width="24"
             height="24"
           >
-            <!---->
           </v-img>
           <span v-if="this.counstItemsInBasket === 0">Корзина</span>
           <span v-else>{{ _affixToItem }}</span>
@@ -42,11 +41,12 @@
     </div>
   </v-main>
 </template>
+
 <script>
 import { mapGetters, mapActions } from "vuex";
-import { affixToItem } from '../../helpers'
+import { affixToItem } from "../../helpers";
 export default {
-  name: 'HeaderLogo',
+  name: "HeaderLogo",
   data() {
     return {
       countItems: null,
@@ -59,15 +59,16 @@ export default {
   computed: {
     ...mapGetters(["itemsInBasket", "counstItemsInBasket"]),
     _affixToItem() {
-      return affixToItem(this.counstItemsInBasket)
+      return affixToItem(this.counstItemsInBasket);
     },
-    },
+  },
 
   methods: {
     ...mapActions(["addItems", "loadItemsFromStorage"]),
   }
 };
 </script>
+
 <style lang="scss">
 .d-header-genders {
   .v-tab {

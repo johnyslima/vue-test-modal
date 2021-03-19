@@ -325,30 +325,32 @@ export const marketingBanner = {
     title: 'Одеяла и подушки',
     description: 'Время уюта',
     img: 'https://a.lmcdn.ru/bs2/8/57/w_tiz_5_home.jpg',
+    url: 'https://www.lamoda.ru/c/6655/home_accs-tovarydlyaspalnipostelnyeprinadlezhnosti/?labels=42006&zbs_content=w_left_1_842239_ru_140321_tiz_w_home'
   },
   bannerBottom: {
     title: 'Как влитые',
     description: 'Джинсы на каждый день',
     img: 'https://a.lmcdn.ru/bs2/0/93/w_tiz_6_jeans.jpg',
+    url: 'https://www.lamoda.ru/c/397/clothes-d-insy/?sf=251&zbs_content=w_left_2_842241_all_140321_tiz_w_jeans'
   },
 
   carousel: [
   {
     title: 'День рождения Lamoda',
-    description: 'Балуем новинками',
+    description: 'Балуем новинками!',
     img: 'https://a.lmcdn.ru/bs2/3/00/1556x1204_4750_de.jpeg',
+    url: 'https://www.lamoda.ru/lp/la10/?zbs_content=w_center_1_842510_ru_1803_main_wm_lamoda10'
   },
   {
     title: 'Тренд: кожа',
     description: 'Одежда, обувь, аксессуары',
     img: 'https://a.lmcdn.ru/bs2/1/16/w_hp_7_total-leather-look.jpg',
+    url: 'https://www.lamoda.ru/c/4153/default-women/?labels=42007&sf=215&zbs_content=w_center_2_842246_ru_140321_main_w_leather'
   },
   {
     title: 'Ваше участие - наши образы',
     description: 'Преображение от стилиста Lamoda',
     img: 'https://a.lmcdn.ru/bs2/1/45/1556x1204-1.jpg',
+    url: 'https://www.lamoda.ru/lp/na_divane38/?zbs_content=w_center_3_842549_ru_1803_main_w_nadivane_180321'
   }
-  
-  
-  
 ]}

@@ -4,9 +4,9 @@
       <v-col cols="6" md="4">
         <v-card>
           <BannerCard>
-            <a class="header__logo" href="/" slot="img">
+            <a class="header__logo" :href="marketing.bannerTop.url" slot="img">
               <v-img
-                alt="Vuetify Logo"
+                alt="bannerTop"
                 class="shrink mr-2"
                 contain
                 :src="marketing.bannerTop.img"
@@ -17,13 +17,13 @@
               </v-img>
             </a>
             <span slot="title">{{ marketing.bannerTop.title }}</span>
-            <span slot="description">{{ marketing.bannerTop.title }}</span>
+            <span slot="description">{{ marketing.bannerTop.description }}</span>
           </BannerCard>
 
           <BannerCard class="mt-4">
-            <a class="header__logo" href="/" slot="img">
+            <a class="header__logo" :href="marketing.bannerBottom.url" slot="img">
               <v-img
-                alt="Vuetify Logo"
+                alt="bannerBottom"
                 class="shrink mr-2"
                 contain
                 :src="marketing.bannerBottom.img"
@@ -50,6 +50,7 @@
               hide-delimiters
               interval="3500"
             >
+            
               <v-carousel-item
                 v-for="(banner, i) in marketing.carousel"
                 :key="i"
@@ -57,12 +58,14 @@
                 height="600"
                 width="778px"
               >
+              <a :href="banner.url">
                 <div class="banner_carousel_info">
                   <div class="banner_carousel_title">{{ banner.title }}</div>
                   <div class="banner_carousel_description">
                     {{ banner.description }}
                   </div>
                 </div>
+              </a>
               </v-carousel-item>
             </v-carousel>
           </div>
@@ -72,6 +75,7 @@
     <div class="banner-wrapper"></div>
   </v-container>
 </template>
+
 <script>
 import { marketingBanner } from "../../mock";
 import BannerCard from "./BannerCard";
@@ -87,6 +91,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scope>
 .banner_info,
 .banner_carousel_info {
@@ -105,6 +110,10 @@ export default {
   .banner_carousel_title {
     font-size: 24px;
     font-weight: bold;
+  }
+
+  .banner_carousel_description {
+    color: #888;
   }
 }
 

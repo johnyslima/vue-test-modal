@@ -31,6 +31,7 @@
   <Modal ref="modal" :dialog="dialog" />
   </v-container>
 </template>
+
 <script>
 import Modal from "./Modal";
 import { mapGetters, mapActions } from "vuex";
@@ -59,9 +60,10 @@ export default {
 
   async mounted() {
     this.fetchClothes();
-  },
+  }
 };
 </script>
+
 <style lang="scss" scope>
 .v-sheet.v-card {
   border-radius: 0px !important;

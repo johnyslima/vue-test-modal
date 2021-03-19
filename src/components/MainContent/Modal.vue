@@ -88,6 +88,7 @@
     </v-dialog>
   </div>
 </template>
+
 <script>
 import { mapActions } from "vuex";
 export default {
@@ -132,6 +133,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 .v-carousel__controls {
   height: 25px !important;

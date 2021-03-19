@@ -59,6 +59,7 @@
     <v-divider></v-divider>
   </div>
 </template>
+
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
@@ -102,6 +103,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 .list-item-price {
   font-size: 16px;
