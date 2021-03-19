@@ -11,15 +11,11 @@
 <script>
 import HeaderLogo from './HeaderLogo';
 import Navbar from './Navbar';
-// import Menu from './Menu';
-// import SearchBar from './SearchBar';
 
 export default {
   components: {
     HeaderLogo,
-    Navbar,
-    // Menu,
-    // SearchBar
+    Navbar
   }
 }
 </script>

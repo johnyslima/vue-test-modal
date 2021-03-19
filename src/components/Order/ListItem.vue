@@ -25,29 +25,31 @@
             :disabled="item.count === 1"
             ><v-icon dark>
               mdi-minus
-            </v-icon></v-btn>
+            </v-icon></v-btn
+          >
           {{ item.count }} шт.
           <v-btn
             elevation="2"
             icon
             x-small
             @click="plusCount"
-            :disabled="item.count === countStock">
+            :disabled="item.count === countStock"
+          >
             <v-icon dark>
               mdi-plus
-            </v-icon></v-btn>
+            </v-icon></v-btn
+          >
         </div>
         <div class="mt-16">
           <v-btn
-            
             icon
             color="blue"
             x-small
             @click="remove"
-            :disabled="item.count === countStock">
-            <v-icon dark>
-              mdi-cart-off
-            </v-icon>Удалить</v-btn>
+            :disabled="item.count === countStock"
+          >
+            <v-icon dark> mdi-cart-off </v-icon>Удалить</v-btn
+          >
         </div>
       </v-col>
       <v-col cols="6" md="2" class="list-item-price">
@@ -60,6 +62,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
+  name: 'ListItem',
   props: ["item"],
   computed: {
     ...mapGetters(["counstItemsInBasket", "allClothes", "itemsInBasket"]),
@@ -94,8 +97,8 @@ export default {
       this.removeFromBasket({
         id: this.item.id,
         size: this.item.size,
-      })
-    }
+      });
+    },
   },
 };
 </script>

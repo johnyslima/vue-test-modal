@@ -21,7 +21,7 @@
         </v-col>
       </v-row>
       <v-divider class="mt-4"></v-divider>
-      <div v-for="item in items" :key="item.id">
+      <div v-for="item in items" :key="item.id + '_' + item.size">
         <ListItem :item="item" />
       </div>
     </div>
@@ -32,6 +32,7 @@ import ListItem from "./ListItem";
 import { mapGetters } from "vuex";
 import { affixToItem } from '../../helpers'
 export default {
+  name: 'List',
   props: ["items"],
   components: {
     ListItem,

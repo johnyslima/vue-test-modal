@@ -1,7 +1,6 @@
 <template lang="">
   <v-container>
     <v-row>
-      <!-- <div class="banner-wrapper"> -->
       <v-col cols="6" md="4">
         <v-card>
           <BannerCard>
@@ -35,15 +34,22 @@
               </v-img>
             </a>
             <span slot="title">{{ marketing.bannerBottom.title }}</span>
-            <span slot="description">{{ marketing.bannerBottom.description }}</span>
+            <span slot="description">{{
+              marketing.bannerBottom.description
+            }}</span>
           </BannerCard>
-
         </v-card>
       </v-col>
       <v-col cols="12" sm="6" md="8">
         <v-card>
           <div class="mt-1 ml-2">
-            <v-carousel height="620" width="778px" cycle hide-delimiters interval="3500">
+            <v-carousel
+              height="620"
+              width="778px"
+              cycle
+              hide-delimiters
+              interval="3500"
+            >
               <v-carousel-item
                 v-for="(banner, i) in marketing.carousel"
                 :key="i"
@@ -62,15 +68,15 @@
           </div>
         </v-card>
       </v-col>
-      <!-- </div> -->
     </v-row>
     <div class="banner-wrapper"></div>
   </v-container>
 </template>
 <script>
 import { marketingBanner } from "../../mock";
-import BannerCard from './BannerCard'
+import BannerCard from "./BannerCard";
 export default {
+  name: "Banner",
   components: {
     BannerCard,
   },
@@ -82,7 +88,6 @@ export default {
 };
 </script>
 <style lang="scss" scope>
-
 .banner_info,
 .banner_carousel_info {
   text-align: center;
@@ -97,12 +102,10 @@ export default {
   bottom: -10px;
   padding: 16px 0;
 
-
-    .banner_carousel_title {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
+  .banner_carousel_title {
+    font-size: 24px;
+    font-weight: bold;
+  }
 }
 
 .v-carousel__controls {

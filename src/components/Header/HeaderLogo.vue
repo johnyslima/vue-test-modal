@@ -46,6 +46,7 @@
 import { mapGetters, mapActions } from "vuex";
 import { affixToItem } from '../../helpers'
 export default {
+  name: 'HeaderLogo',
   data() {
     return {
       countItems: null,

@@ -32,7 +32,6 @@
         text
       >
         <span class="mr-2">Нам 10 лет</span>
-        <!-- <v-icon>mdi-open-in-new</v-icon> -->
       </v-btn>
       </div>
       </v-container>
@@ -40,12 +39,8 @@
 </template>
 <script>
 export default {
-  
+  name: 'Navbar',
 }
 </script>
 <style lang="scss">
-.header-bar {
-  // background-color: #000 !important;
-  // color: #fff !important
-}
 </style>

@@ -16,11 +16,7 @@ export default {
   components: {
     Layout,
     MainContent
-  },
-
-  data: () => ({
-    //
-  }),
+  }
 };
 </script>
 

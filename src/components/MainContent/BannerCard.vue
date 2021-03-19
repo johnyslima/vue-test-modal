@@ -9,7 +9,7 @@
 </template>
 <script>
 export default {
-  
+  name: 'BannerCard',
 }
 </script>
 <style lang="scss">

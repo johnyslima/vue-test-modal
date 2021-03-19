@@ -4,13 +4,13 @@
       <v-card>
         <div class="d-flex">
           <div>
-            <!-- <v-img height="590" width="400" :src="item.img"></v-img> -->
             <v-carousel height="590" width="400">
               <v-carousel-item
                 v-for="(photo, i) in item.imgs"
                 :key="i"
                 :src="photo"
-                height="590" width="400"
+                height="590"
+                width="400"
               ></v-carousel-item>
             </v-carousel>
           </div>
@@ -91,6 +91,7 @@
 <script>
 import { mapActions } from "vuex";
 export default {
+  name: "Modal",
   props: ["dialog"],
   data() {
     return {

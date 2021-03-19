@@ -4,7 +4,6 @@ import vuetify from './vuetify'
 import VueRouter from 'vue-router'
 import router from './router'
 import store from './store'
-import './main.scss'
 
 Vue.use(VueRouter)
 

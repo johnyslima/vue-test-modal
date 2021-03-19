@@ -16,11 +16,7 @@ export default {
   components: {
     Layout,
     Order
-  },
-
-  data: () => ({
-    //
-  }),
+  }
 };
 </script>
 
