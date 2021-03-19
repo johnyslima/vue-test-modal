@@ -15,13 +15,31 @@
         </v-col>
       </v-row>
     </div>
+    <v-snackbar
+      v-model="snackbar.show"
+      top
+      :timeout="snackbar.timeout"
+    >
+      {{ snackbar.text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="blue"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
   </v-container>
 </template>
 <script>
 import Form from './Form'
 import Info from './Info'
 import List from './List'
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: 'Order',
 
@@ -32,16 +50,27 @@ export default {
   },
 
   computed: {
-    ...mapGetters(["allClothes", "itemsInBasket", "totalPrice"]),
+    ...mapGetters(["allClothes", "itemsInBasket", "totalPrice", "numberOrder"]),
     },
 
   data: () => ({
-    //
+    snackbar: {
+      show: false,
+      text: 'Ваш заказ отправлен',
+      timeout: 2000
+    }
   }),
 
   methods: {
+    ...mapActions(["buying"]),
     submitHandler(val) {
-      console.log(val)
+      this.snackbar.show = true
+      const obj = {
+        id: this.numberOrder,
+        customer: val,
+        items: this.itemsInBasket
+      }
+      this.buying(obj)
     }
   }
 };

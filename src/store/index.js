@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import post from './modules/posts'
+import clothes from './modules/clothes'
 import basket from './modules/basket'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    post,
+    clothes,
     basket
   }
 })

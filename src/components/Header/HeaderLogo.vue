@@ -1,15 +1,15 @@
 <template lang="">
   <v-main>
-      <div
-        class="logo-line-wrapper d-flex justify-space-between mt-4 align-center"
-      >
-        <nav role="menubar" class="d-header-genders">
-          <v-tabs>
-            <v-tab>Женщинам</v-tab>
-            <v-tab>Мужчинам</v-tab>
-          </v-tabs>
-        </nav>
+    <div
+      class="logo-line-wrapper d-flex justify-space-between mt-4 align-center"
+    >
+      <nav role="menubar" class="d-header-genders">
+        <v-tabs>
+          <v-tab>Женщинам</v-tab>
+        </v-tabs>
+      </nav>
 
+      <a class="header__logo" href="/">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
@@ -19,69 +19,52 @@
           width="160"
           height="32"
         >
-          <a class="header__logo" href="/"></a>
         </v-img>
+      </a>
 
-        <div class="d-flex buy-basket">
-          <!-- <a role="button" class="sign-in-btn">
-            Войти
-          </a> -->
-          <a href="/checkout/cart/" role="link" class="d-flex buy-basket-link">
-              <v-img
-                alt="Vuetify Logo"
-                class="shrink mr-2"
-                contain
-                src="https://a.lmcdn.ru/static/21.03.11/img/307d4ad2de375b510f76764183b286e2.svg"
-                transition="scale-transition"
-                width="24"
-                height="24"
-              >
-                <!---->
-              </v-img>
-            <span v-if="this.counstItemsInBasket === 0">Корзина</span>
-            <span v-else>{{this.counstItemsInBasket}} товара</span>
-          </a>
-        </div>
+      <div class="d-flex buy-basket">
+        <a href="/checkout/cart/" role="link" class="d-flex buy-basket-link">
+          <v-img
+            alt="Vuetify Logo"
+            class="shrink mr-2"
+            contain
+            src="https://a.lmcdn.ru/static/21.03.11/img/307d4ad2de375b510f76764183b286e2.svg"
+            transition="scale-transition"
+            width="24"
+            height="24"
+          >
+            <!---->
+          </v-img>
+          <span v-if="this.counstItemsInBasket === 0">Корзина</span>
+          <span v-else>{{ _affixToItem }}</span>
+        </a>
       </div>
+    </div>
   </v-main>
 </template>
 <script>
 import { mapGetters, mapActions } from "vuex";
+import { affixToItem } from '../../helpers'
 export default {
   data() {
     return {
-      countItems: null
-    }
+      countItems: null,
+    };
   },
   mounted() {
-    // this.count()
-    this.loadItemsFromStorage()
+    this.loadItemsFromStorage();
   },
 
-  computed: mapGetters(['itemsInBasket', 'counstItemsInBasket']),
+  computed: {
+    ...mapGetters(["itemsInBasket", "counstItemsInBasket"]),
+    _affixToItem() {
+      return affixToItem(this.counstItemsInBasket)
+    },
+    },
 
   methods: {
     ...mapActions(["addItems", "loadItemsFromStorage"]),
-    // count() {
-    //   let itemsArr = []
-    //   if ((localStorage.getItem('basket') !== null)) {
-    //     itemsArr = JSON.parse(localStorage.basket)
-    //     this.countItems = itemsArr.length
-    //   }
-    //   // return itemsArr.length
-    // }
-  },
-
-  // computed: {
-  //   countItems() {
-  //     let itemsArr = []
-  //     if ((localStorage.getItem('basket') !== null)) {
-  //       itemsArr = JSON.parse(localStorage.basket)
-  //       // this.countItems = itemsArr.length
-  //     }
-  //     return itemsArr.length
-  //   }
-  // }
+  }
 };
 </script>
 <style lang="scss">
@@ -106,15 +89,15 @@ export default {
 .buy-basket {
   font-size: 16px;
 
-	&-link {
-		color: black !important;
-		text-decoration: none;
-	}
+  &-link {
+    color: black !important;
+    text-decoration: none;
+  }
 
-	.sign-in-btn {
-		margin-right: 12px;
-		color: #888;
-	}
+  .sign-in-btn {
+    margin-right: 12px;
+    color: #888;
+  }
 }
 
 .header-logo {

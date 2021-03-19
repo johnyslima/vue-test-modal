@@ -14,13 +14,11 @@ export default {
     Header,
   },
 
-  methods: mapActions(["fetchClothes"]),
+methods: mapActions(["fetchClothes"]),
 
   async mounted() {
     this.fetchClothes();
-  },
-
-  data: () => ({
+  },  data: () => ({
     //
   }),
 }

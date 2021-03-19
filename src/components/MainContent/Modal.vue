@@ -4,7 +4,15 @@
       <v-card>
         <div class="d-flex">
           <div>
-            <v-img height="590" width="400" :src="item.img"></v-img>
+            <!-- <v-img height="590" width="400" :src="item.img"></v-img> -->
+            <v-carousel height="590" width="400">
+              <v-carousel-item
+                v-for="(photo, i) in item.imgs"
+                :key="i"
+                :src="photo"
+                height="590" width="400"
+              ></v-carousel-item>
+            </v-carousel>
           </div>
 
           <div class="ma-5 mt-8 product-title">
@@ -86,6 +94,7 @@ export default {
   props: ["dialog"],
   data() {
     return {
+      model: 0,
       show: false,
       item: null,
       select: {
@@ -95,7 +104,6 @@ export default {
   },
 
   mounted() {
-    console.log("here");
     this.select = { count: 0 };
   },
 
@@ -124,6 +132,11 @@ export default {
 };
 </script>
 <style lang="scss">
+.v-carousel__controls {
+  height: 25px !important;
+  background: #0000000a !important;
+}
+
 .modal {
   overflow-y: hidden !important;
 }

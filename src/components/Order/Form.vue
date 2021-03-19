@@ -45,7 +45,7 @@
         Отправить заказ
       </v-btn>
       <v-btn @click="clear" primary>
-        clear
+        Очистить
       </v-btn>
     </form>
   </div>
@@ -111,7 +111,6 @@ export default {
 
   methods: {
     submit() {
-      console.log(this);
       this.$v.$touch();
       const obj = {
         name: this.name,
@@ -126,8 +125,9 @@ export default {
       this.$v.$reset();
       this.name = "";
       this.email = "";
-      this.select = null;
-      this.checkbox = false;
+      this.phone = "";
+      this.location = "";
+      this.commentary = "";
     },
   },
 };

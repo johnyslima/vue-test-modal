@@ -3,10 +3,6 @@
     <Navbar />
     <v-container>
     <HeaderLogo />
-    <!-- <div class="d-flex justify-space-between menu-bar">
-      <Menu />
-      <SearchBar />
-    </div> -->
     </v-container>
   </div>
 </template>

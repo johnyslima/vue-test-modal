@@ -4,7 +4,12 @@ export const clothes = [
     title: 'Платье',
     brand: 'Please',
     price: 2630,
-    img: 'https://a.lmcdn.ru/img600x866/P/L/PL003EWLQVO8_12898521_1_v1_2x.jpg',
+    imgs: [
+      'https://a.lmcdn.ru/img600x866/P/L/PL003EWLQVO8_12898521_1_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/P/L/PL003EWLQVO8_12898522_2_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/P/L/PL003EWLQVO8_12898523_3_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/P/L/PL003EWLQVO8_12898524_4_v1_2x.jpg'
+    ],
     src: 'https://www.lamoda.ru/p/mp002xw1h0lq/clothes-felisse-pizhama/?source_rec_type=mainpage-women',
     sizes: [
       {
@@ -28,22 +33,22 @@ export const clothes = [
       {
         id:1,
         title: 'Состав',
-        value: 'Полиэстер - 100%'
+        value: 'Вискоза - 70%, Полиэстер - 24%, Эластан - 6%'
       },
       {
         id:2,
         title: 'Размер товара на модели',
-        value: '42 RUS'
+        value: 'S INT'
       },
       {
         id:3,
         title: 'Параметры модели',
-        value: '92-60-90'
+        value: '88-63-92'
       },
       {
         id:4,
         title: 'Артикул',
-        value: 'MP002XW1H0LQ'
+        value: 'MA101EWMHBE8'
       },
     ]
   },
@@ -52,7 +57,12 @@ export const clothes = [
     title: 'Пижама',
     brand: 'Felisse',
     price: 1300,
-    img: '//a.lmcdn.ru/img600x866/M/P/MP002XW1H0LQ_7501072_1_v1.jpg',
+    // img: '//a.lmcdn.ru/img600x866/M/P/MP002XW1H0LQ_7501072_1_v1.jpg',
+    imgs: [
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW1H0LQ_7501072_1_v1.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW1H0LQ_7501073_2_v1.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW1H0LQ_7501074_3_v1.jpg'
+    ],
     src: 'https://www.lamoda.ru/p/mp002xw1h0lq/clothes-felisse-pizhama/?source_rec_type=mainpage-women',
     sizes: [
       {
@@ -97,10 +107,16 @@ export const clothes = [
   },
   {
     id: 3,
-    title: 'Платье',
-    brand: 'Please',
-    price: 2630,
-    img: 'https://a.lmcdn.ru/img600x866/C/A/CA107AWMNEN1_13269365_1_v1.jpg',
+    title: 'Лоферы',
+    brand: 'Caprice',
+    price: 5030,
+    // img: 'https://a.lmcdn.ru/img600x866/C/A/CA107AWMNEN1_13269365_1_v1.jpg',
+    imgs: [
+      'https://a.lmcdn.ru/img600x866/C/A/CA107AWMNEN1_13269365_1_v1.jpg',
+      '//a.lmcdn.ru/img600x866/C/A/CA107AWMNEN1_13269366_2_v1.jpg',
+      '//a.lmcdn.ru/img600x866/C/A/CA107AWMNEN1_13269368_4_v1.jpg',
+      '//a.lmcdn.ru/img600x866/C/A/CA107AWMNEN1_13293703_9_v1_2x.jpg'
+    ],
     src: 'https://www.lamoda.ru/p/mp002xw1h0lq/clothes-felisse-pizhama/?source_rec_type=mainpage-women',
     sizes: [
       {
@@ -123,32 +139,38 @@ export const clothes = [
     description: [
       {
         id:1,
-        title: 'Состав',
-        value: 'Полиэстер - 100%'
+        title: 'Материал верха',
+        value: 'натуральная лаковая кожа'
       },
       {
         id:2,
-        title: 'Размер товара на модели',
-        value: '42 RUS'
+        title: 'Внутренний материал',
+        value: 'натуральная кожа'
       },
       {
         id:3,
-        title: 'Параметры модели',
-        value: '92-60-90'
+        title: 'Параметры Материал подошвы',
+        value: 'резина'
       },
       {
         id:4,
         title: 'Артикул',
-        value: 'MP002XW1H0LQ'
+        value: 'MP002XW04G4L'
       },
     ]
   },
   {
     id: 4,
-    title: 'Платье',
-    brand: 'Please',
-    price: 2630,
-    img: 'https://a.lmcdn.ru/img600x866/M/P/MP002XW032T3_12324684_1_v3_2x.jpg',
+    title: 'Юбка',
+    brand: 'DeFacto',
+    price: 599,
+    // img: 'https://a.lmcdn.ru/img600x866/M/P/MP002XW032T3_12324684_1_v3_2x.jpg',
+    imgs: [
+      'https://a.lmcdn.ru/img600x866/M/P/MP002XW032T3_12324684_1_v3_2x.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW032T3_12324685_2_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW032T3_12324686_3_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW032T3_12324687_4_v1_2x.jpg'
+    ],
     src: 'https://www.lamoda.ru/p/mp002xw1h0lq/clothes-felisse-pizhama/?source_rec_type=mainpage-women',
     sizes: [
       {
@@ -172,31 +194,36 @@ export const clothes = [
       {
         id:1,
         title: 'Состав',
-        value: 'Полиэстер - 100%'
+        value: 'Акрил - 100%'
       },
       {
         id:2,
         title: 'Размер товара на модели',
-        value: '42 RUS'
+        value: 'S INT'
       },
       {
         id:3,
         title: 'Параметры модели',
-        value: '92-60-90'
+        value: '89-60-84'
       },
       {
         id:4,
         title: 'Артикул',
-        value: 'MP002XW1H0LQ'
+        value: 'MP002XW032T3'
       },
     ]
   },
   {
     id: 5,
-    title: 'Платье',
-    brand: 'Please',
+    title: 'Жилет',
+    brand: 'Violeta by Mango',
     price: 2630,
-    img: 'https://a.lmcdn.ru/img600x866/V/I/VI005EWMPDK2_13379490_1_v1.jpg',
+    // img: 'https://a.lmcdn.ru/img600x866/V/I/VI005EWMPDK2_13379490_1_v1.jpg',
+    imgs: [
+      'https://a.lmcdn.ru/img600x866/V/I/VI005EWMPDK2_13379490_1_v1.jpg',
+      '//a.lmcdn.ru/img600x866/V/I/VI005EWMPDK2_13379491_2_v1.jpg',
+      '//a.lmcdn.ru/img600x866/V/I/VI005EWMPDK2_13379492_3_v1.jpg',
+    ],
     src: 'https://www.lamoda.ru/p/mp002xw1h0lq/clothes-felisse-pizhama/?source_rec_type=mainpage-women',
     sizes: [
       {
@@ -220,31 +247,35 @@ export const clothes = [
       {
         id:1,
         title: 'Состав',
-        value: 'Полиэстер - 100%'
+        value: 'Шерсть - 50%, Полиэстер - 50%'
       },
       {
         id:2,
-        title: 'Размер товара на модели',
-        value: '42 RUS'
+        title: 'Материал подкладки',
+        value: 'Полиэстер - 100%'
       },
       {
         id:3,
-        title: 'Параметры модели',
-        value: '92-60-90'
+        title: 'Сезон',
+        value: 'мульти'
       },
       {
         id:4,
         title: 'Артикул',
-        value: 'MP002XW1H0LQ'
+        value: 'VI005EWMPDK2'
       },
     ]
   },
   {
     id: 6,
-    title: 'Платье',
-    brand: 'Please',
-    price: 2630,
-    img: 'https://a.lmcdn.ru/img600x866/M/P/MP002XW04PI8_13061987_1_v1_2x.jpg',
+    title: 'Футболка',
+    brand: 'Befree',
+    price: 999,
+    imgs: [
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW059VT_13290831_1_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW059VT_13290832_2_v1_2x.jpg',
+      '//a.lmcdn.ru/img600x866/M/P/MP002XW059VT_13290833_3_v1_2x.jpg',
+    ],
     src: 'https://www.lamoda.ru/p/mp002xw1h0lq/clothes-felisse-pizhama/?source_rec_type=mainpage-women',
     sizes: [
       {
@@ -268,23 +299,56 @@ export const clothes = [
       {
         id:1,
         title: 'Состав',
-        value: 'Полиэстер - 100%'
+        value: 'Хлопок - 100%'
       },
       {
         id:2,
         title: 'Размер товара на модели',
-        value: '42 RUS'
+        value: 'S INT'
       },
       {
         id:3,
         title: 'Параметры модели',
-        value: '92-60-90'
+        value: '86-60-92'
       },
       {
         id:4,
         title: 'Артикул',
-        value: 'MP002XW1H0LQ'
+        value: 'MP002XW059VX'
       },
     ]
   },
 ]
+
+export const marketingBanner = {
+  bannerTop: {
+    title: 'Одеяла и подушки',
+    description: 'Время уюта',
+    img: 'https://a.lmcdn.ru/bs2/8/57/w_tiz_5_home.jpg',
+  },
+  bannerBottom: {
+    title: 'Как влитые',
+    description: 'Джинсы на каждый день',
+    img: 'https://a.lmcdn.ru/bs2/0/93/w_tiz_6_jeans.jpg',
+  },
+
+  carousel: [
+  {
+    title: 'День рождения Lamoda',
+    description: 'Балуем новинками',
+    img: 'https://a.lmcdn.ru/bs2/3/00/1556x1204_4750_de.jpeg',
+  },
+  {
+    title: 'Тренд: кожа',
+    description: 'Одежда, обувь, аксессуары',
+    img: 'https://a.lmcdn.ru/bs2/1/16/w_hp_7_total-leather-look.jpg',
+  },
+  {
+    title: 'Ваше участие - наши образы',
+    description: 'Преображение от стилиста Lamoda',
+    img: 'https://a.lmcdn.ru/bs2/1/45/1556x1204-1.jpg',
+  }
+  
+  
+  
+]}
